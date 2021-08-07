@@ -1,6 +1,8 @@
 import './App.css';
 import CollapsibleList from './components/UI/CollapsibleList/CollapsibleList';
 import Board from './components/Layout/Board';
+import ButtonAddListItem from './components/UI/Buttons/ButtonAddListItem';
+import CardTransparent from './components/UI/Card/CardTransparent';
 
 function App() {
   const DUMMY_ITEMS1 = [
@@ -18,8 +20,11 @@ function App() {
   return (
     <div className='App'>
       <Board>
-        <CollapsibleList title='Sample Title' items={DUMMY_ITEMS1} />
-        <CollapsibleList title='Sample Title' items={DUMMY_ITEMS2} />
+        <CollapsibleList title='Backlog' items={DUMMY_ITEMS1} />
+        <CollapsibleList title='Sprint' items={DUMMY_ITEMS2} />
+        <CardTransparent>
+          <p>+ Add another list</p>
+        </CardTransparent>
       </Board>
     </div>
   );
