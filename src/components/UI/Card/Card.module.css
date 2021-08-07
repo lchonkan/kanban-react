@@ -4,7 +4,6 @@
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   width: fit-content;
- 
-  margin: auto;
-  margin-top: 100px;
+  margin-left: 8px;
+  height: fit-content;
 }

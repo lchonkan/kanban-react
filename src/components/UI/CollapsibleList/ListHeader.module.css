@@ -9,20 +9,42 @@
     flex: row;
     height: 40px;
     padding-bottom: 5px;
+    padding-right: 5px;
 } 
 
 .container .logo {
+    fill:firebrick;
+    flex-grow: 0;
     height: 1.5rem;
     order:1;
     margin-top: 10px;
     padding: 0;
+    padding-right: 3px;
+    padding-left: 3px;
 }
 
+
+
 .container h1 {
+    text-align: lef;
+    flex-grow: 0;
+    color: rgb(67, 67, 67);
     font-weight: 600;
     order:2;
     padding: 0;
     margin: 0;
     margin-top:13px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+}
+
+.container .logoexpand {
+    flex-grow: 0;
+    height: 1.5rem;
+    order:4;
+    margin-top: 10px;
+    padding: 0;
+    padding-right: 0;
+    padding-left: 3px;
+    margin-left: auto;
+    
 }
