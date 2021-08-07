@@ -10,7 +10,8 @@ function App() {
 
   return (
     <div className='App'>
-      <CollapsibleList items={DUMMY_ITEMS} />
+      <CollapsibleList title='Sample Title' items={DUMMY_ITEMS} />
+      <CollapsibleList title='Sample Title' items={DUMMY_ITEMS} />
     </div>
   );
 }

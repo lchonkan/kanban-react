@@ -5,10 +5,8 @@ import Card from '../Card/Card';
 const ListItem = props => {
   return (
     <li className={styles.item}>
-      <Card>
-        <h2>{props.title}</h2>
-        <p>{props.description}</p>
-      </Card>
+      <p>{props.title}</p>
+      <p>{props.description}</p>
     </li>
   );
 };
