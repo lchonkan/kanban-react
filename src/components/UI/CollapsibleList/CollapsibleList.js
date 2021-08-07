@@ -7,23 +7,35 @@ import styles from './CollapsibleList.module.css';
 
 const CollapsibleList = props => {
   const [isAddingItem, setIsAddingItem] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  function toggleList() {
+    //alert('Collapsing');
+    setIsCollapsed(!isCollapsed);
+  }
 
   return (
     <Card>
-      <ListHeader title={props.title} />
-      <ul className={styles.container}>
-        {props.items.map(item => {
-          return (
-            <ListItem
-              key={item.title}
-              title={item.title}
-              description={item.description}
-            />
-          );
-        })}
-      </ul>
+      <ListHeader
+        onClick={toggleList}
+        title={props.title}
+        vertical={isCollapsed}
+      />
+      {!isCollapsed && (
+        <ul className={styles.container}>
+          {props.items.map(item => {
+            return (
+              <ListItem
+                key={item.title}
+                title={item.title}
+                description={item.description}
+              />
+            );
+          })}
+        </ul>
+      )}
 
-      <ButtonAddListItem label='Add new item' />
+      {!isCollapsed && <ButtonAddListItem label='Add new item' />}
     </Card>
   );
 };

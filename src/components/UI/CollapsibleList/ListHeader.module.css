@@ -2,9 +2,7 @@
     border:0;
     padding:0;
     margin: 0;
-
     margin-left: 5px;
-
     display: flex;
     flex: row;
     height: 40px;
@@ -12,8 +10,10 @@
     padding-right: 5px;
 } 
 
+
+
 .container .logo {
-    fill:firebrick;
+
     flex-grow: 0;
     height: 1.5rem;
     order:1;
@@ -23,10 +23,8 @@
     padding-left: 3px;
 }
 
-
-
 .container h1 {
-    text-align: lef;
+    text-align: left;
     flex-grow: 0;
     color: rgb(67, 67, 67);
     font-weight: 600;
@@ -46,5 +44,48 @@
     padding-right: 0;
     padding-left: 3px;
     margin-left: auto;
+    
+}
+
+.container-vertical {
+    height: 0px;
+    transition: 0.3s;
+    border:0;
+    padding:0;
+    margin: 0;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    height: 200px;
+    padding-top: 9px;
+
+} 
+
+.container-vertical h1 {
+    text-orientation: mixed;
+    writing-mode: vertical-rl; 
+    color: rgb(67, 67, 67);
+    font-weight: 600;
+    order:2;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    margin-right: 4px;
+    font-size: 0.9rem;
+}
+
+.container-vertical .logoexpand {
+    flex-grow: 0;
+    height: 1.5rem;
+    order:4;
+    margin-top: 10px;
+    padding: 0;
+    padding-right: 0;
+    padding-left: 3px;
+    margin-left: auto;
+    margin-top: auto;
     
 }

@@ -22,6 +22,7 @@ function App() {
       <Board>
         <CollapsibleList title='Backlog' items={DUMMY_ITEMS1} />
         <CollapsibleList title='Sprint' items={DUMMY_ITEMS2} />
+        <CollapsibleList title='Done' items={DUMMY_ITEMS2} />
         <CardTransparent>
           <p>+ Add another list</p>
         </CardTransparent>
