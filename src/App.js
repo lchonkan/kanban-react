@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import CollapsibleList from './components/UI/CollapsibleList/CollapsibleList';
 function App() {
+  const DUMMY_ITEMS = [
+    { title: 'Item 1', description: 'Description 1' },
+    { title: 'Item 2', description: 'Description 2' },
+    { title: 'Item 3', description: 'this is the end of it' },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <CollapsibleList items={DUMMY_ITEMS} />
     </div>
   );
 }
