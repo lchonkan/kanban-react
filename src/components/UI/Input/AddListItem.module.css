@@ -1,0 +1,46 @@
+.input {
+  margin: 0px 6px 6px 6px;
+    /* padding: 1rem; */
+    /* width: 90%; */
+    /* max-width: 40rem; */
+    width: auto;
+    display: block;
+    overflow: hidden;
+  }
+  
+  .input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input input {
+    border:0;
+    outline: 0;
+    height: 2rem;
+  
+
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 4px;
+    /* box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15); */
+    transition: 0.3s;
+    
+    padding: 4px 10px 4px 10px;
+    
+  }
+  
+  .input input:focus {
+    outline: none;
+    border-color: #4f005f;
+  }
+
+  .controls {
+    font-size: 0.8rem;
+    display: flex;
+    overflow: hidden;
+    justify-content: left;
+    margin: 0px 6px 6px 6px;
+    /* width: auto; */
+  }

@@ -25,6 +25,7 @@ function App() {
         <CollapsibleList title='Done' items={DUMMY_ITEMS2} />
         <CardTransparent>
           <p>+ Add another list</p>
+
         </CardTransparent>
       </Board>
     </div>

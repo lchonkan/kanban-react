@@ -5,7 +5,7 @@ const ListItem = props => {
   return (
     <li className={styles.item}>
       <p>{props.title}</p>
-      {/* <p>{props.description}</p> */}
+      <p className={styles.description}>{props.description}</p>
     </li>
   );
 };

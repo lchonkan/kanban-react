@@ -4,6 +4,7 @@ import ListItem from './ListItem';
 import { ListHeader } from './ListHeader';
 import ButtonAddListItem from '../Buttons/ButtonAddListItem';
 import styles from './CollapsibleList.module.css';
+import AddListItem from '../Input/AddListItem';
 
 const CollapsibleList = props => {
   const [isAddingItem, setIsAddingItem] = useState(false);
@@ -14,13 +15,27 @@ const CollapsibleList = props => {
     setIsCollapsed(!isCollapsed);
   }
 
+  const onAddItemHandler = () => {
+    setIsAddingItem(true);
+  };
+
+  const onCancelFormHandler = () => {
+    setIsAddingItem(false);
+  };
+
+  const onConfirmHandler = () => {
+    setIsAddingItem(false);
+  };
+
   return (
     <Card>
+      {/* The list header is always visible */}
       <ListHeader
         onClick={toggleList}
         title={props.title}
         vertical={isCollapsed}
       />
+      {/* Rendering the list items conditionally (only if the list is not collapsed) */}
       {!isCollapsed && (
         <ul className={styles.container}>
           {props.items.map(item => {
@@ -35,7 +50,16 @@ const CollapsibleList = props => {
         </ul>
       )}
 
-      {!isCollapsed && <ButtonAddListItem label='Add new item' />}
+      {!isCollapsed && !isAddingItem && (
+        <ButtonAddListItem onClick={onAddItemHandler} label='Add new item' />
+      )}
+
+      {isAddingItem && !isCollapsed && (
+        <AddListItem
+          onConfirm={onConfirmHandler}
+          onCancel={onCancelFormHandler}
+        />
+      )}
     </Card>
   );
 };
