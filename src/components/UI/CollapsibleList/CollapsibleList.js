@@ -5,6 +5,7 @@ import { ListHeader } from './ListHeader';
 import ButtonAddListItem from '../Buttons/ButtonAddListItem';
 import styles from './CollapsibleList.module.css';
 import AddListItem from '../Input/AddListItem';
+import { useCallback } from 'react/cjs/react.production.min';
 
 const CollapsibleList = props => {
   const [isAddingItem, setIsAddingItem] = useState(false);
@@ -26,8 +27,8 @@ const CollapsibleList = props => {
 
   const onConfirmHandler = newItem => {
     setListItems(prevItems => [...prevItems, newItem]);
-    //console.log(listItems);
-    // props.onUpdateList(listItems);
+
+    props.onUpdateList();
     setIsAddingItem(false);
   };
 

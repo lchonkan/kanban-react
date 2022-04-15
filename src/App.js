@@ -33,9 +33,7 @@ function App() {
   ];
 
   const updateListHandler = item => {
-    console.log(item);
-    console.log(items);
-    setItems(prevItems => [...prevItems, item]);
+    console.log('Updated');
   };
 
   const [items, setItems] = useState(DUMMY_ITEMS);
