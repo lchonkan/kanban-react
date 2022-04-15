@@ -9,6 +9,7 @@ import AddListItem from '../Input/AddListItem';
 const CollapsibleList = props => {
   const [isAddingItem, setIsAddingItem] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [listItems, setListItems] = useState(props.items);
 
   function toggleList() {
     //alert('Collapsing');
@@ -23,7 +24,10 @@ const CollapsibleList = props => {
     setIsAddingItem(false);
   };
 
-  const onConfirmHandler = () => {
+  const onConfirmHandler = newItem => {
+    setListItems(prevItems => [...prevItems, newItem]);
+    //console.log(listItems);
+    // props.onUpdateList(listItems);
     setIsAddingItem(false);
   };
 
@@ -38,7 +42,7 @@ const CollapsibleList = props => {
       {/* Rendering the list items conditionally (only if the list is not collapsed) */}
       {!isCollapsed && (
         <ul className={styles.container}>
-          {props.items.map(item => {
+          {listItems.map(item => {
             return (
               <ListItem
                 key={item.title}
