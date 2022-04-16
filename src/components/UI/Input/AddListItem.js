@@ -1,25 +1,28 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import Card from '../Card/Card';
 import classes from './AddListItem.module.css';
 import Button from '../Buttons/Button';
 
+//Using the context
+import BoardContext from '../../../context/board-context';
+
 function AddListItem(props) {
+  const boardCtx = useContext(BoardContext);
   //Using references for the inputs
   const titleInputRef = useRef();
 
-  const [error, setError] = useState(false);
-
   const addItemHandler = event => {
-    // alert('clicked');
     event.preventDefault();
     const enteredTitle = titleInputRef.current.value;
-    // console.log(enteredTitle);
+
     const newItem = {
+      list_id: props.currentList,
       id: Math.random().toString(),
       title: enteredTitle,
       description: '',
     };
-    props.onConfirm(newItem);
+    boardCtx.addItem(newItem);
+    props.onConfirm(); // this sets the state of the list to not editing
   };
   return (
     <>
