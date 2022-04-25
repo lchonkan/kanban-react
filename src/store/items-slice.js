@@ -18,6 +18,8 @@ const listItemsSlice = createSlice({
   reducers: {
     createListItem(state, action) {
       //code for adding a list item
+      const newItem = action.payload;
+      state.listItems.push(newItem);
     },
     moveListItem(state, action) {
       //code for moving items
