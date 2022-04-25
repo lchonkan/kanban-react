@@ -1,30 +1,29 @@
 .button {
-    border:0;
-    padding:0;
-    margin: 0;
-    margin-left: 5px;
-    display: flex;
-    flex: row;
-    padding-bottom: 10px;
-    background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
+  display: flex;
+  flex: row;
+  padding-bottom: 10px;
+  background: none;
 }
 
 .button img {
-    height: 1.5rem;
-    order:1;
-    margin-top: 10px;
-    padding: 0;
-    padding-right: 3px;
-    padding-left: 3px;
+  height: 1.5rem;
+  order: 1;
+  margin-top: 10px;
+  padding: 0;
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
-
 .button p {
-    color: rgb(67, 67, 67);
-    font-weight: 400;
-    order:2;
-    padding: 0;
-    margin: 0;
-    margin-top:13px;
-    font-size: 0.9rem;
+  color: rgb(67, 67, 67);
+  font-weight: 400;
+  order: 2;
+  padding: 0;
+  margin: 0;
+  margin-top: 13px;
+  font-size: 0.9rem;
 }

@@ -9,7 +9,7 @@
 }
 
 .transparent {
-  background-color: rgba(230, 230, 230,0.10);
+  background-color: rgba(230, 230, 230, 0.1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
@@ -18,10 +18,11 @@
   width: 220px;
   height: 30px;
   padding: 10px 10px 5px 15px;
+  color: rgb(224, 224, 224);
 }
 
 .transparent p {
-  color:white;
+  color: white;
   text-align: left;
   font-size: 0.9rem;
   padding: 0;
