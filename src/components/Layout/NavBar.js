@@ -31,7 +31,7 @@ const NavBar = () => {
         </ul>
       </nav>
       <div>
-        <button class={classes.cta} href='#'>
+        <button class={classes.cta}>
           <Link to='/login'>Login</Link>
         </button>
       </div>
