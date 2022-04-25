@@ -4,6 +4,8 @@ import classes from './NavBar.module.css';
 // import logos
 import homeLogo from '../../assets/icons/smart-home-svgrepo-com.svg';
 
+import { Link } from 'react-router-dom';
+
 const NavBar = () => {
   return (
     <header className={classes.navigation}>
@@ -12,22 +14,27 @@ const NavBar = () => {
       <nav className={classes.nav__links}>
         <ul>
           <li>
-            <a href='#'>Home</a>
+            <Link to='/home'>Home</Link>
           </li>
           <li>
-            <a href='#'>Boards</a>
+            <Link to='/board'>Active</Link>
           </li>
           <li>
-            <a href='#'>Profile</a>
+            <Link to='/boards'>Boards</Link>
           </li>
           <li>
-            <a href='#'>Settings</a>
+            <Link to='/profile'>Profile</Link>
+          </li>
+          <li>
+            <Link to='/settings'>Settings</Link>
           </li>
         </ul>
       </nav>
-      <button class={classes.cta} href='#'>
-        Login
-      </button>
+      <div>
+        <button class={classes.cta} href='#'>
+          <Link to='/login'>Login</Link>
+        </button>
+      </div>
     </header>
   );
 };
