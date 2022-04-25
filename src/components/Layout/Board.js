@@ -11,7 +11,9 @@ import BoardContext from '../../context/board-context';
 
 const Board = props => {
   const lists = useSelector(state => state.lists.items);
+  const listItems = useSelector(state => state.listItems.listItems);
   console.log(lists);
+  console.log(listItems);
 
   const boardCtx = useContext(BoardContext);
   return (

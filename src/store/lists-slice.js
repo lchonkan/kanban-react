@@ -6,14 +6,17 @@ const listsSlice = createSlice({
     items: [
       {
         id: 'l01',
+        boardId: 'b01',
         title: 'backlog',
       },
       {
         id: 'l02',
+        boardId: 'b01',
         title: 'backlog',
       },
       {
         id: 'l03',
+        boardId: 'b01',
         title: 'backlog',
       },
     ],
