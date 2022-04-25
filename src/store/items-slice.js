@@ -12,7 +12,7 @@ const listItemsSlice = createSlice({
       { listId: 'l02', id: 'i06', title: 'Item 3', description: 'this is the end of it' },
       { listId: 'l03', id: 'i07', title: 'Item 1', description: 'Description 1' },
       { listId: 'l03', id: 'i08', title: 'Item 2', description: 'Description 2' },
-      { listId: 'l03', id: 'i09', title: 'Item 3', description: 'this is the end of it' },
+      { listId: 'l03', id: 'i09', title: 'Item 3', description: 'this is the end of it oh yeah' },
     ],
   },
   reducers: {

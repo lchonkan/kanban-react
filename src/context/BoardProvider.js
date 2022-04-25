@@ -4,7 +4,7 @@ import BoardContext from './board-context';
 const defaultBoardState = {
   lists: [
     {
-      id: 'L01',
+      id: 'l01',
       title: 'Backlog',
       items: [
         { title: 'Item 1', description: 'Description 1' },
@@ -13,7 +13,7 @@ const defaultBoardState = {
       ],
     },
     {
-      id: 'L02',
+      id: 'l02',
       title: 'Sprint',
       items: [
         { title: 'Item 1', description: 'Description 1' },
@@ -22,7 +22,7 @@ const defaultBoardState = {
       ],
     },
     {
-      id: 'L03',
+      id: 'l03',
       title: 'Done',
       items: [
         { title: 'Item 1', description: 'Description 1' },
@@ -37,9 +37,7 @@ const boardReducer = (state, action) => {
   if (action.type === 'ADD_ITEM') {
     console.log('Adding item to list', action.item);
     //get current list from state
-    const curentListIndex = state.lists.findIndex(
-      list => list.id === action.item.list_id
-    );
+    const curentListIndex = state.lists.findIndex(list => list.id === action.item.list_id);
     const currentList = state.lists[curentListIndex];
     const updatedListItems = currentList.items.concat(action.item);
 
@@ -57,10 +55,7 @@ const boardReducer = (state, action) => {
 
 const BoardProvider = props => {
   //Using the reducer
-  const [boardState, dispatchBoard] = useReducer(
-    boardReducer,
-    defaultBoardState
-  );
+  const [boardState, dispatchBoard] = useReducer(boardReducer, defaultBoardState);
 
   //Defining event handlers for the add/remove functions
   const addItemToListHandler = item => {
@@ -75,11 +70,7 @@ const BoardProvider = props => {
     removeItem: removeItemFromListHandler,
   };
 
-  return (
-    <BoardContext.Provider value={boardContext}>
-      {props.children}
-    </BoardContext.Provider>
-  );
+  return <BoardContext.Provider value={boardContext}>{props.children}</BoardContext.Provider>;
 };
 
 export default BoardProvider;
