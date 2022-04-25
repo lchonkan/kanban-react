@@ -4,15 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;
+  padding: 10px 30px 10px 15px;
   /* background-color: #24252a; */
   background-color: #264176;
-}
-
-.navigation * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 .navigation li,
