@@ -48,7 +48,7 @@ const CollapsibleList = props => {
         </ul>
       )}
 
-      {!isCollapsed && !isAddingItem && <ButtonAddListItem onClick={toggleForm} label='Add new item' />}
+      {!isCollapsed && !isAddingItem && <ButtonAddListItem onClick={toggleForm} label='Add a card' />}
 
       {isAddingItem && !isCollapsed && (
         <AddListItem currentList={props.id} onConfirm={onConfirmHandler} onCancel={onCancelFormHandler} />

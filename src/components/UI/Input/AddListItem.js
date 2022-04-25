@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react';
+import React, { useRef } from 'react';
 import Card from '../Card/Card';
 import classes from './AddListItem.module.css';
 import Button from '../Buttons/Button';
@@ -31,7 +31,7 @@ function AddListItem(props) {
   return (
     <>
       <Card className={classes.input}>
-        <form onSubmit={addItemHandler}>
+        <form>
           <input placeholder='Enter Title' id='title' type='text' ref={titleInputRef}></input>
         </form>
       </Card>

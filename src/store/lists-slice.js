@@ -12,12 +12,12 @@ const listsSlice = createSlice({
       {
         id: 'l02',
         boardId: 'b01',
-        title: 'backlog',
+        title: 'sprint',
       },
       {
         id: 'l03',
         boardId: 'b01',
-        title: 'backlog',
+        title: 'doing',
       },
     ],
   },
