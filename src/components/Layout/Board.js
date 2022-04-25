@@ -18,12 +18,12 @@ const Board = props => {
   const boardCtx = useContext(BoardContext);
   return (
     <div className={styles.board}>
-      {boardCtx.lists.map(item => (
+      {lists.map(item => (
         <CollapsibleList
           key={item.id}
           id={item.id}
           title={item.title}
-          items={item.items}
+          // items={item.items}
           // onUpdateList={updateListHandler}
         />
       ))}

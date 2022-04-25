@@ -28,12 +28,7 @@ function AddListItem(props) {
     <>
       <Card className={classes.input}>
         <form onSubmit={addItemHandler}>
-          <input
-            placeholder='Enter Title'
-            id='title'
-            type='text'
-            ref={titleInputRef}
-          ></input>
+          <input placeholder='Enter Title' id='title' type='text' ref={titleInputRef}></input>
         </form>
       </Card>
       <div className={classes.controls}>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Card from '../Card/Card';
 import ListItem from './ListItem';
 import { ListHeader } from './ListHeader';
@@ -6,27 +6,15 @@ import ButtonAddListItem from '../Buttons/ButtonAddListItem';
 import styles from './CollapsibleList.module.css';
 import AddListItem from '../Input/AddListItem';
 
-//Using the context
-import BoardContext from '../../../context/board-context';
-
 // using the slice from the store to get the current list items.
 import { useSelector } from 'react-redux';
 
 const CollapsibleList = props => {
-  //using the context
-  const boardCtx = useContext(BoardContext);
-
   //using redux
   const listItems = useSelector(state => state.listItems.listItems);
   console.log(listItems);
   const currentListItems = listItems.filter(item => item.listId === props.id);
   console.log('From Redux', currentListItems);
-
-  const currentListId = props.id;
-  const currentListIndex = boardCtx.lists.findIndex(list => list.id === currentListId);
-  const currentListElement = boardCtx.lists[currentListIndex];
-
-  console.log('Rendering List', currentListElement);
 
   const [isAddingItem, setIsAddingItem] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -63,7 +51,7 @@ const CollapsibleList = props => {
       {!isCollapsed && !isAddingItem && <ButtonAddListItem onClick={toggleForm} label='Add new item' />}
 
       {isAddingItem && !isCollapsed && (
-        <AddListItem currentList={currentListId} onConfirm={onConfirmHandler} onCancel={onCancelFormHandler} />
+        <AddListItem currentList={props.id} onConfirm={onConfirmHandler} onCancel={onCancelFormHandler} />
       )}
     </Card>
   );

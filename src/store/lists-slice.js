@@ -5,17 +5,17 @@ const listsSlice = createSlice({
   initialState: {
     items: [
       {
-        id: 'L01',
+        id: 'l01',
         boardId: 'b01',
         title: 'backlog',
       },
       {
-        id: 'L02',
+        id: 'l02',
         boardId: 'b01',
         title: 'backlog',
       },
       {
-        id: 'L03',
+        id: 'l03',
         boardId: 'b01',
         title: 'backlog',
       },
