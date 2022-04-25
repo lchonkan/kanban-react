@@ -20,7 +20,7 @@ const AddList = props => {
 
   const addItemHandler = event => {
     // alert('adding item');
-    // event.preventDefault();
+    event.preventDefault();
     const enteredTitle = titleInputRef.current.value;
 
     const newList = {
@@ -30,6 +30,7 @@ const AddList = props => {
     };
     dispatch(listActions.addList(newList));
     //props.onConfirm(); // this sets the state of the list to not editing
+    titleInputRef.current.value = '';
   };
 
   const onCancelFormHandler = () => {
@@ -53,7 +54,7 @@ const AddList = props => {
   let content = isAddingItem && (
     <div className={classes.container}>
       <Card className={classes.input}>
-        <form>
+        <form onSubmit={addItemHandler}>
           <input placeholder='Enter Title' id='title' type='text' ref={titleInputRef}></input>
         </form>
       </Card>

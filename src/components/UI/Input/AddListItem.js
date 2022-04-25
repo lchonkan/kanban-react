@@ -26,12 +26,13 @@ function AddListItem(props) {
     };
 
     dispatch(listItemActions.createListItem(newListItem));
-    props.onConfirm(); // this sets the state of the list to not editing
+    titleInputRef.current.value = '';
+    // props.onConfirm(); // this sets the state of the list to not editing
   };
   return (
     <>
       <Card className={classes.input}>
-        <form>
+        <form onSubmit={addItemHandler}>
           <input placeholder='Enter Title' id='title' type='text' ref={titleInputRef}></input>
         </form>
       </Card>
