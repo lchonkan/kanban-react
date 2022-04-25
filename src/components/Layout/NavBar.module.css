@@ -6,7 +6,8 @@
   align-items: center;
   padding: 10px 30px 10px 15px;
   /* background-color: #24252a; */
-  background-color: #264176;
+  /* background-color: #264176; */
+  background-color: black;
 }
 
 .navigation li,
@@ -22,6 +23,7 @@
 
 .navigation p {
   color: white;
+  font-size: 1.5rem;
 }
 
 .navigation img {
@@ -50,7 +52,7 @@
 }
 
 .navigation button {
-  padding: 9px 25px;
+  padding: 8px 25px;
   background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;

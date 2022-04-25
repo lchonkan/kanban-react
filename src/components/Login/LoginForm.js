@@ -5,8 +5,8 @@ const LoginForm = () => {
   return (
     <div className={classes.loginform}>
       <div className={classes.background}>
-        <div className={classes.shape}></div>
-        <div className={classes.shape}></div>
+        {/* <div className={classes.shape}></div>
+        <div className={classes.shape}></div> */}
       </div>
       <form>
         <h3>Login Here</h3>

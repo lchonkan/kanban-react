@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <header className={classes.navigation}>
       {/* <img className={classes.logo} src={homeLogo} alt='logo' /> */}
-      <p>REACT BOARDS</p>
+      <p>REACT SHOWCASE</p>
       <nav className={classes.nav__links}>
         <ul>
           <li>
