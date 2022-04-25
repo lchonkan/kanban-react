@@ -1,16 +1,10 @@
 body {
- font-family: sans-serif;
+  font-family: sans-serif;
   background-color: #264176;
 }
 
 .App {
-
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
