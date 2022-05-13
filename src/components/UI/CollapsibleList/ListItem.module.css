@@ -1,7 +1,7 @@
 .item {
   padding: 0;
   margin: 0px 6px 6px 6px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
   /* border-width: thick; */
   list-style-type: none;
   border-radius: 4px;
@@ -9,7 +9,6 @@
   transition: 0.3s;
 
   padding: 4px 10px 4px 10px;
-  
 }
 
 .item p {
@@ -17,12 +16,9 @@
   font-size: 0.9rem;
   padding: 0;
   margin: 4px 0 4px 0;
-
 }
 
 .item .description {
   font-size: 0.8rem;
   color: rgb(103, 103, 103);
 }
-
-

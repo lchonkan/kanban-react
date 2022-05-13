@@ -4,15 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;
+  padding: 10px 30px 10px 15px;
   /* background-color: #24252a; */
-  background-color: #264176;
-}
-
-.navigation * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  /* background-color: #264176; */
+  background-color: black;
 }
 
 .navigation li,
@@ -23,10 +18,12 @@
   font-size: 16px;
   color: #ecf0f1;
   text-decoration: none;
+  margin: 0;
 }
 
 .navigation p {
   color: white;
+  font-size: 1.5rem;
 }
 
 .navigation img {
@@ -43,7 +40,7 @@
 
 .navigation .nav__links li {
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 20px 0 0;
 }
 
 .navigation .nav__links li a {
@@ -55,7 +52,7 @@
 }
 
 .navigation button {
-  padding: 9px 25px;
+  padding: 8px 25px;
   background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;

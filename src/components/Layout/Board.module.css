@@ -1,6 +1,4 @@
 .board {
-  margin-top: 2%;
+  margin-top: 10px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
 }
