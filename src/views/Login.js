@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import LoginForm from '../components/Login/LoginForm';
 
 const Login = () => {
-  return <LoginForm></LoginForm>;
+  return <LoginForm />;
 };
 
 export default Login;

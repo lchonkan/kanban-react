@@ -1,9 +1,6 @@
 import React from 'react';
 import classes from './NavBar.module.css';
 
-// import logos
-import homeLogo from '../../assets/icons/smart-home-svgrepo-com.svg';
-
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -33,6 +30,9 @@ const NavBar = () => {
       <div>
         <button class={classes.cta}>
           <Link to='/login'>Login</Link>
+        </button>
+        <button class={classes.cta}>
+          <Link to='/api/forge/auth'>Forge Auth</Link>
         </button>
       </div>
     </header>
