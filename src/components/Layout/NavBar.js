@@ -13,6 +13,15 @@ const NavBar = () => {
           <li>
             <Link to='/home'>Home</Link>
           </li>
+          <li>
+            <Link to='#'>Projects</Link>
+          </li>
+          <li>
+            <Link to='#'>Data Exchanges</Link>
+          </li>
+          <li>
+            <Link to='#'>Viewer</Link>
+          </li>
           {/* <li>
             <Link to='/board'>Active</Link>
           </li> */}

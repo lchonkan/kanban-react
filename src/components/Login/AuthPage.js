@@ -48,6 +48,7 @@ const AuthPage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+        authCtx.credentials = data;
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -68,10 +69,12 @@ const AuthPage = () => {
     <div>
       <h2>Authorization Page</h2>
       <br />
-      {url && <p>{url}</p>}
+      {authCtx.credentials && <h3>Authorized!</h3>}
+      <br />
+      {/* {url && <p>{url}</p>} */}
 
       <br />
-      {url && <a href={url}>Authorize your account</a>}
+      {url && !authCtx.accessToken && <a href={url}>Get Access Token</a>}
     </div>
   );
 };

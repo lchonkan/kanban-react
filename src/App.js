@@ -15,7 +15,7 @@ import { AuthContext } from './context/auth-provider';
 function App() {
   return (
     <div className='App'>
-      <AuthContext.Provider value={{ url: '', code: '' }}>
+      <AuthContext.Provider value={{ credentials: {} }}>
         <NavBar />
         <Routes>
           <Route path='/board' element={<CurrentBoard />} />
