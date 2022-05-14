@@ -1,5 +1,5 @@
 import React from 'react';
-import HubItem from './HubItem';
+// import HubItem from './HubItem';
 
 const HubList = (props) => {
   return <ul>{props.children}</ul>;

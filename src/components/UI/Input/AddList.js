@@ -7,9 +7,8 @@ import addItemLogo from '../../../assets/icons/add_black_24dp.svg';
 //using Redux
 import { useDispatch } from 'react-redux';
 import { listActions } from '../../../store/lists-slice';
-import ButtonAddListItem from '../Buttons/ButtonAddListItem';
 
-const AddList = props => {
+const AddList = (props) => {
   //using redux
   const dispatch = useDispatch();
 
@@ -18,7 +17,7 @@ const AddList = props => {
   //Using references for the inputs
   const titleInputRef = useRef();
 
-  const addItemHandler = event => {
+  const addItemHandler = (event) => {
     // alert('adding item');
     event.preventDefault();
     const enteredTitle = titleInputRef.current.value;
@@ -46,10 +45,10 @@ const AddList = props => {
     setIsAddingItem(true);
   };
 
-  const onConfirmHandler = newItem => {
-    addItemHandler();
-    // setIsAddingItem(false);
-  };
+  // const onConfirmHandler = (newItem) => {
+  //   addItemHandler();
+  //   // setIsAddingItem(false);
+  // };
 
   let content = isAddingItem && (
     <div className={classes.container}>

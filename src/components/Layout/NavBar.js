@@ -13,25 +13,25 @@ const NavBar = () => {
           <li>
             <Link to='/home'>Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/board'>Active</Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link to='/boards'>Boards</Link>
-          </li>
+          </li> */}
           <li>
             <Link to='/profile'>Profile</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/settings'>Settings</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <div>
-        <button class={classes.cta}>
+        {/* <button className={classes.cta}>
           <Link to='/login'>Login</Link>
-        </button>
-        <button class={classes.cta}>
+        </button> */}
+        <button className={classes.cta}>
           <Link to='/api/forge/auth'>Forge Auth</Link>
         </button>
       </div>
