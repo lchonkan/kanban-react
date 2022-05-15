@@ -1,17 +1,21 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import { initializeViewer } from './viewer-helper';
-import { AuthContext } from '../../../context/auth-provider';
 
 import './Viewer.css';
 
+import { useSelector } from 'react-redux';
+
 const Viewer = () => {
-  const authCtx = useContext(AuthContext);
+  //USing Redux
+  const authCredentials = useSelector((state) => state.auth.credentials);
+  const access_token = authCredentials.access_token;
 
   const urn = 'dXJuOmFkc2sud2lwcHJvZDpmcy5maWxlOnZmLndWY0xsRE5LUWVXdFctc2pQX0RUX1E_dmVyc2lvbj0x';
 
   useEffect(() => {
-    if (authCtx.credentials.access_token) {
-      initializeViewer(urn, authCtx.credentials.access_token);
+    if (access_token) {
+      initializeViewer(urn, access_token);
+      // initializeViewer(urn, authCtx.credentials.access_token);
     }
   }, []);
 
