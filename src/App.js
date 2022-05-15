@@ -11,6 +11,7 @@ import CurrentBoard from './views/CurrentBoard';
 import AuthPage from './components/Login/AuthPage';
 
 import { AuthContext } from './context/auth-provider';
+import ForgeViewer from './views/ForgeViewer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/api/forge/callback/oauth' element={<AuthPage />} />
           <Route path='/api/forge/auth' element={<AuthPage />} />
+          <Route path='/forge/viewer' element={<ForgeViewer />} />
         </Routes>
       </AuthContext.Provider>
     </div>

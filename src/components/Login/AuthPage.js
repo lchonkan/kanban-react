@@ -69,7 +69,7 @@ const AuthPage = () => {
     <div>
       <h2>Authorization Page</h2>
       <br />
-      {authCtx.credentials && <h3>Authorized!</h3>}
+      {!authorizationCode && authCtx.accessToken && <h3>Authorized!</h3>}
       <br />
       {/* {url && <p>{url}</p>} */}
 
