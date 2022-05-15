@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import HubList from '../components/Forge/Hubs/HubList';
+import AnimatedTree from '../components/UI/Tree/AnimatedTree';
 
 //using redux to get the token
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,6 +20,17 @@ const Profile = () => {
     hubs.forEach((hub) => {
       getProjects(hub.id);
     });
+  };
+
+  const onGetProjects = (hubId, projects) => {
+    projects.map((project) => {
+      let proj = {
+        ...project,
+        hubId,
+      };
+      dispatch(dataActions.addProject(proj));
+    });
+    console.log('Storing Projects', projects);
   };
 
   const getHubs = async () => {
@@ -58,7 +70,9 @@ const Profile = () => {
       .then((response) => response.json())
       .then((data) => {
         const projects = JSON.parse(data).data;
-        console.log('Projects for Hub: ' + hubId, { projects: projects });
+        // console.log('Projects for Hub: ' + hubId, { projects: projects });
+        // console.log('Calling OnGetProjects()');
+        onGetProjects(hubId, projects);
         //onGetHubs(data);
       })
 
@@ -72,13 +86,16 @@ const Profile = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Profile</h1>
-      <br />
-      {/* <h3>Authorization code: {code}</h3> */}
-      <br />
-      <HubList />
-    </div>
+    <>
+      <div>
+        <h1>Profile</h1>
+        <br />
+        {/* <h3>Authorization code: {code}</h3> */}
+        <br />
+        <HubList />
+      </div>
+      <AnimatedTree />
+    </>
   );
 };
 

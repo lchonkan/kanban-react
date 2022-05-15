@@ -4,6 +4,7 @@ import { initializeViewer } from './viewer-helper';
 import './Viewer.css';
 
 import { useSelector } from 'react-redux';
+import AnimatedTree from '../../../components/UI/Tree/AnimatedTree';
 
 const Viewer = () => {
   //USing Redux
@@ -21,8 +22,12 @@ const Viewer = () => {
 
   return (
     <div>
-      {/* <h2>Forge Viewer</h2> */}
-      <div className='adsk-viewing-viewer' id='viewerContainer'></div>
+      <span>
+        <AnimatedTree />
+      </span>
+      <span>
+        <div className='adsk-viewing-viewer' id='viewerContainer'></div>
+      </span>
     </div>
   );
 };
