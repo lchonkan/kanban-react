@@ -4,8 +4,20 @@ import { AuthContext } from '../../context/auth-provider';
 
 import { useSearchParams } from 'react-router-dom';
 
+// using the slice from the store to get the current lists.
+import { useSelector, useDispatch } from 'react-redux';
+
+import Sucess from './Sucess';
+
+import { authActions } from '../../store/auth.slice';
+
 const AuthPage = () => {
   const authCtx = useContext(AuthContext);
+
+  //USing Redux
+  const authCredentials = useSelector((state) => state.auth.credentials);
+  const access_token = authCredentials.access_token;
+  const dispatch = useDispatch();
 
   const [url, setUrl] = useState(null);
 
@@ -31,6 +43,11 @@ const AuthPage = () => {
       });
   }, []);
 
+  const onLoginHandler = (credentials) => {
+    dispatch(authActions.setCredentials(credentials));
+    dispatch(authActions.login());
+  };
+
   const getToken3Legged = async (authorizationCode) => {
     console.log('Getting Token... with code.. ', authorizationCode);
 
@@ -49,7 +66,10 @@ const AuthPage = () => {
       .then((data) => {
         console.log('Success:', data);
         authCtx.credentials = data;
+        onLoginHandler(data);
+        console.log('leo');
       })
+
       .catch((error) => {
         console.error('Error:', error);
       });
@@ -69,12 +89,12 @@ const AuthPage = () => {
     <div>
       <h2>Authorization Page</h2>
       <br />
-      {!authorizationCode && authCtx.accessToken && <h3>Authorized!</h3>}
+      {access_token && <Sucess />}
       <br />
       {/* {url && <p>{url}</p>} */}
 
       <br />
-      {url && !authCtx.accessToken && <a href={url}>Get Access Token</a>}
+      {url && !access_token && <a href={url}>Get Access Token</a>}
     </div>
   );
 };

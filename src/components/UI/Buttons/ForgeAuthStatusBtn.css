@@ -1,0 +1,38 @@
+.forgeBtn {
+  width: 240px;
+  height: 60px;
+  background: rgb(31, 31, 31);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  margin-right: 10px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+
+.forgeBtn-status__ok {
+  display: inline-block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  vertical-align: middle;
+  background: linear-gradient(136.12deg, #72ff03 -31.93%, rgba(99, 224, 0, 0) 150.28%);
+  border-radius: 50%;
+  /* padding-left: 10px; */
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.forgeBtn-status__fail {
+  display: inline-block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  vertical-align: middle;
+  background: linear-gradient(136.12deg, #b02809 -31.93%, rgba(99, 224, 0, 0) 150.28%);
+  border-radius: 50%;
+  /* padding-left: 10px; */
+  margin-right: 10px;
+  margin-left: 5px;
+}

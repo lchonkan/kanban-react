@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from './NavBar.module.css';
 
 import { Link } from 'react-router-dom';
+
+import ForgeAuthStatusBtn from '../UI/Buttons/ForgeAuthStatusBtn';
 
 const NavBar = () => {
   return (
@@ -40,9 +42,10 @@ const NavBar = () => {
         {/* <button className={classes.cta}>
           <Link to='/login'>Login</Link>
         </button> */}
-        <button className={classes.cta}>
-          <Link to='/api/forge/auth'>Forge Auth</Link>
-        </button>
+
+        <ForgeAuthStatusBtn>
+          <Link to='/api/forge/auth'>Auth </Link>
+        </ForgeAuthStatusBtn>
       </div>
     </header>
   );
