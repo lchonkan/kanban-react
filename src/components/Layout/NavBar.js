@@ -1,9 +1,6 @@
 import React from 'react';
 import classes from './NavBar.module.css';
 
-// import logos
-import homeLogo from '../../assets/icons/smart-home-svgrepo-com.svg';
-
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -17,22 +14,34 @@ const NavBar = () => {
             <Link to='/home'>Home</Link>
           </li>
           <li>
-            <Link to='/board'>Active</Link>
+            <Link to='#'>Projects</Link>
           </li>
           <li>
-            <Link to='/boards'>Boards</Link>
+            <Link to='#'>Data Exchanges</Link>
           </li>
+          <li>
+            <Link to='#'>Viewer</Link>
+          </li>
+          {/* <li>
+            <Link to='/board'>Active</Link>
+          </li> */}
+          {/* <li>
+            <Link to='/boards'>Boards</Link>
+          </li> */}
           <li>
             <Link to='/profile'>Profile</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/settings'>Settings</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <div>
-        <button class={classes.cta}>
+        {/* <button className={classes.cta}>
           <Link to='/login'>Login</Link>
+        </button> */}
+        <button className={classes.cta}>
+          <Link to='/api/forge/auth'>Forge Auth</Link>
         </button>
       </div>
     </header>
