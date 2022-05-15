@@ -24,9 +24,9 @@ const NavBar = () => {
           <li>
             <Link to='/forge/viewer'>Viewer</Link>
           </li>
-          {/* <li>
-            <Link to='/board'>Active</Link>
-          </li> */}
+          <li>
+            <Link to='/board'>Board</Link>
+          </li>
           {/* <li>
             <Link to='/boards'>Boards</Link>
           </li> */}
