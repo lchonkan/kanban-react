@@ -34,7 +34,7 @@ export const initializeViewer = async (urn, token) => {
       // viewer.setBackgroundColor(0, 100, 0, 0, 0, 0);
       viewer.setLightPreset(2);
       viewer.setQualityLevel(true, true);
-      // viewer.setTheme('dark-theme');
+      viewer.setTheme('dark-theme');
 
       //!Making the background transparent
       viewer.impl.renderer().setClearAlpha(0); //clear alpha channel

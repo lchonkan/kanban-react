@@ -2,7 +2,8 @@
   /* background: none !important; */
   background-color: rgb(33, 33, 33) !important;
   width: 100%;
-  height: 80%;
+  height: 90%;
+  /* overf0ow: auto; */
   /* align-self: center; */
   padding: 0;
   margin: 0;
