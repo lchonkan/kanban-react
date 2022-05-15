@@ -18,7 +18,7 @@ const Viewer = () => {
   return (
     <div>
       {/* <h2>Forge Viewer</h2> */}
-      <div className='dsk-viewing-viewer' id='viewerContainer'></div>
+      <div className='adsk-viewing-viewer' id='viewerContainer'></div>
     </div>
   );
 };
