@@ -20,7 +20,7 @@ const NavBar = () => {
             <Link to='#'>Data Exchanges</Link>
           </li>
           <li>
-            <Link to='#'>Viewer</Link>
+            <Link to='/forge/viewer'>Viewer</Link>
           </li>
           {/* <li>
             <Link to='/board'>Active</Link>
