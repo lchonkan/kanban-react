@@ -16,6 +16,9 @@ const Profile = () => {
     const hubs = JSON.parse(data).data; // array of hubs
     console.log('Hubs...', hubs);
     dispatch(dataActions.setHubs(hubs));
+    hubs.forEach((hub) => {
+      getProjects(hub.id);
+    });
   };
 
   const getHubs = async () => {
@@ -33,6 +36,30 @@ const Profile = () => {
       .then((data) => {
         console.log('Success:', data);
         onGetHubs(data);
+      })
+
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
+  const getProjects = async (hubId) => {
+    const data = { access_token: authCredentials.access_token, hubId: hubId };
+
+    console.log('Getting projects...', data);
+
+    await fetch('http://localhost:8000/api/data-management/getProjects', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const projects = JSON.parse(data).data;
+        console.log('Projects for Hub: ' + hubId, { projects: projects });
+        //onGetHubs(data);
       })
 
       .catch((error) => {
