@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { initializeViewer } from './viewer-helper';
+import { AuthContext } from '../../../context/auth-provider';
 
 const Viewer = () => {
-  const urn =
-    'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YWRzay1zdHJ1Y3R1cmFsLWJyaWRnZS1kYXRhc2V0LzIwMTlfMDVfMDdfQnJpZGdlLU9ubHlfVjIwMjAucnZ0';
+  const authCtx = useContext(AuthContext);
+
+  const urn = 'dXJuOmFkc2sud2lwcHJvZDpmcy5maWxlOnZmLnhnZ1pRdkNBUjFtVzNWWnFyN1B3NWc_dmVyc2lvbj0z';
 
   useEffect(() => {
-    initializeViewer(urn);
+    if (authCtx.credentials.access_token) {
+      initializeViewer(urn, authCtx.credentials.access_token);
+    }
   }, []);
 
   return (

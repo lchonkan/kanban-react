@@ -2,13 +2,13 @@ import axios from 'axios';
 /* global Autodesk, THREE */
 const url_base = 'http://localhost:4000/';
 // Get token from server
-const getToken = async () => {
-  const { data } = await axios.get(url_base + 'forge/auth');
-  return data;
-};
+// const getToken = async () => {
+//   const { data } = await axios.get(url_base + 'forge/auth');
+//   return data;
+// };
 
-export const initializeViewer = async (urn) => {
-  const token = await getToken();
+export const initializeViewer = async (urn, token) => {
+  // const token = await getToken();
 
   const viewerOptions = {
     env: 'AutodeskProduction',
