@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useContext, useCallback } from 'react';
 
-import { AuthContext } from '../../context/auth-provider';
-
 import { useSearchParams } from 'react-router-dom';
 
 // using the slice from the store to get the current lists.
@@ -12,8 +10,6 @@ import Sucess from './Sucess';
 import { authActions } from '../../store/auth.slice';
 
 const AuthPage = () => {
-  const authCtx = useContext(AuthContext);
-
   //USing Redux
   const authCredentials = useSelector((state) => state.auth.credentials);
   const access_token = authCredentials.access_token;
@@ -36,7 +32,7 @@ const AuthPage = () => {
         const url = data.authUrl;
         console.log('Authorization URL', url);
         setUrl(url);
-        authCtx.url = url;
+        // authCtx.url = url;
       })
       .catch((err) => {
         console.log(err);
@@ -65,9 +61,9 @@ const AuthPage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        authCtx.credentials = data;
+        // authCtx.credentials = data;
         onLoginHandler(data);
-        console.log('leo');
+        // console.log('leo');
       })
 
       .catch((error) => {
