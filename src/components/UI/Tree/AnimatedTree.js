@@ -111,9 +111,6 @@ const AnimatedTree = (props) => {
                   <Tree content={project.attributes.name}>
                     {topFolders.map((topFolder) => {
                       //!TOP FOLDERS
-                      {
-                        ('');
-                      }
                       let folderItem = null;
                       if (topFolder.projectId === project.id) {
                         folderItem = (
