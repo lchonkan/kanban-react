@@ -27,6 +27,16 @@ const dataSlice = createSlice({
 
       console.log('Adding projects to the store...', action.payload);
     },
+    addFolder(state, action) {
+      const folder = action.payload;
+      const existingFolder = state.folders.find((thisFolder) => thisFolder.id === folder.id);
+      if (existingFolder) {
+        return;
+      } else {
+        state.folders.push(folder);
+      }
+      console.log('Adding Folder to store');
+    },
   },
 });
 

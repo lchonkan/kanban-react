@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Tree from 'react-animated-tree';
+import Tree from 'react-animated-tree-v2';
 import './AnimatedTree.css';
 
 const treeStyles = {
   //   position: 'relative',
   'text-align': 'left',
-  'font-size': '1em',
+  'font-size': '0.8em',
   top: 100,
   left: 40,
   color: 'white',
@@ -21,10 +21,11 @@ const typeStyles = {
   verticalAlign: 'center',
 };
 
-const AnimatedTree = () => {
+const AnimatedTree = (props) => {
   //Using Redux for context
   const hubs = useSelector((state) => state.dataManagement.hubs);
   const projects = useSelector((state) => state.dataManagement.projects);
+  const topFolders = useSelector((state) => state.dataManagement.folders);
 
   let tree = (
     <Tree content='Home' type='ITEM' canHide open style={treeStyles}>
@@ -59,7 +60,24 @@ const AnimatedTree = () => {
             {projects.map((project) => {
               let projecItem = null;
               if (project.hubId === hub.id) {
-                projecItem = <Tree content={project.attributes.name} />;
+                projecItem = (
+                  <Tree content={project.attributes.name}>
+                    {topFolders.map((folder) => {
+                      let folderItem = null;
+                      if (folder.projectId === project.id) {
+                        folderItem = (
+                          <Tree
+                            onItemClick={() => {
+                              console.log('Clicked on Folder', folder);
+                            }}
+                            content={folder.attributes.name}
+                          />
+                        );
+                      }
+                      return folderItem;
+                    })}
+                  </Tree>
+                );
               }
               return projecItem;
             })}

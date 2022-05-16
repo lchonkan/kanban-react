@@ -31,7 +31,7 @@ const NavBar = () => {
             <Link to='/boards'>Boards</Link>
           </li> */}
           <li>
-            <Link to='/profile'>Profile</Link>
+            <Link to='/profile'>Data Management API</Link>
           </li>
           {/* <li>
             <Link to='/settings'>Settings</Link>

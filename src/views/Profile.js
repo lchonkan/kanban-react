@@ -28,9 +28,21 @@ const Profile = () => {
         ...project,
         hubId,
       };
-      dispatch(dataActions.addProject(proj));
+      getTopFolders(hubId, project.id);
+      return dispatch(dataActions.addProject(proj));
     });
     console.log('Storing Projects', projects);
+  };
+
+  const onGetTopFolders = (hubId, projectId, topFolders) => {
+    topFolders.map((topFolder) => {
+      let thisFolder = {
+        ...topFolder,
+        hubId,
+        projectId,
+      };
+      return dispatch(dataActions.addFolder(thisFolder));
+    });
   };
 
   const getHubs = async () => {
@@ -81,19 +93,46 @@ const Profile = () => {
       });
   };
 
+  const getTopFolders = async (hubId, projectId) => {
+    const data = { access_token: authCredentials.access_token, hubId: hubId, projectId: projectId };
+
+    // console.log('Getting Top Folders...', data);
+
+    await fetch('http://localhost:8000/api/data-management/getTopFolders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const topFolders = JSON.parse(data).data;
+        // console.log('Projects for Hub: ' + hubId, { projects: projects });
+        // console.log({ topFolders: topFolders });
+        onGetTopFolders(hubId, projectId, topFolders);
+        // onGetProjects(hubId, projects);
+        //onGetHubs(data);
+      })
+
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
   useEffect(() => {
     getHubs();
   }, []);
 
   return (
     <>
-      <div>
-        <h1>Profile</h1>
-        <br />
-        {/* <h3>Authorization code: {code}</h3> */}
-        <br />
-        <HubList />
-      </div>
+      {/* <div> */}
+      {/* <h1>Profile</h1> */}
+      {/* <br /> */}
+      {/* <h3>Authorization code: {code}</h3> */}
+      {/* <br /> */}
+      {/* <HubList /> */}
+      {/* </div> */}
       <AnimatedTree />
     </>
   );
