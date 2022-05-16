@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classes from './NavBar.module.css';
 
 import { Link } from 'react-router-dom';
@@ -15,9 +15,7 @@ const NavBar = () => {
           <li>
             <Link to='/home'>Home</Link>
           </li>
-          <li>
-            <Link to='#'>Projects</Link>
-          </li>
+
           <li>
             <Link to='#'>Data Exchanges</Link>
           </li>

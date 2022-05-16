@@ -5,6 +5,7 @@ const dataSlice = createSlice({
   initialState: {
     hubs: [],
     projects: [],
+    topFolders: [],
     folders: [],
     files: [],
     versions: [],
@@ -34,6 +35,16 @@ const dataSlice = createSlice({
         return;
       } else {
         state.folders.push(folder);
+      }
+      console.log('Adding Folder to store');
+    },
+    addTopFolder(state, action) {
+      const folder = action.payload;
+      const existingFolder = state.topFolders.find((thisFolder) => thisFolder.id === folder.id);
+      if (existingFolder) {
+        return;
+      } else {
+        state.topFolders.push(folder);
       }
       console.log('Adding Folder to store');
     },

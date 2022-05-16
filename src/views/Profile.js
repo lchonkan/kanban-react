@@ -41,7 +41,7 @@ const Profile = () => {
         hubId,
         projectId,
       };
-      return dispatch(dataActions.addFolder(thisFolder));
+      return dispatch(dataActions.addTopFolder(thisFolder));
     });
   };
 
