@@ -10,7 +10,7 @@ const Viewer = () => {
   const authCredentials = useSelector((state) => state.auth.credentials);
   const access_token = authCredentials.access_token;
 
-  const urn = 'dXJuOmFkc2sud2lwcHJvZDpmcy5maWxlOnZmLndWY0xsRE5LUWVXdFctc2pQX0RUX1E_dmVyc2lvbj0x';
+  const urn = 'dXJuOmFkc2sud2lwcHJvZDpmcy5maWxlOnZmLkdPZVRvcy1rVGFLT2VaQWdhOHNqYlE_dmVyc2lvbj0x';
 
   useEffect(() => {
     if (access_token) {
@@ -19,12 +19,7 @@ const Viewer = () => {
     }
   }, []);
 
-  return (
-    <div>
-      {/* <h2>Forge Viewer</h2> */}
-      <div className='adsk-viewing-viewer' id='viewerContainer'></div>
-    </div>
-  );
+  return <div className='adsk-viewing-viewer' id='viewerContainer'></div>;
 };
 
 export default Viewer;
