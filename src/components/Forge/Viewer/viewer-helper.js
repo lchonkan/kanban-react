@@ -17,12 +17,12 @@ export const initializeViewer = async (urn, token) => {
   };
 
   //!loading extensions
-  // var config3D = {
-  //   extensions: ['Autodesk.Viewing.Wireframes'],
-  // };
+  var config3D = {
+    extensions: ['Autodesk.Viewing.Wireframes'],
+  };
 
   var viewerContainer = document.getElementById('viewerContainer');
-  var viewer = new Autodesk.Viewing.Private.GuiViewer3D(viewerContainer, {});
+  var viewer = new Autodesk.Viewing.Private.GuiViewer3D(viewerContainer, config3D);
 
   Autodesk.Viewing.Private.InitParametersSetting.alpha = true; //enable alpha for the renderer
 
@@ -40,6 +40,10 @@ export const initializeViewer = async (urn, token) => {
       viewer.impl.renderer().setClearAlpha(0); //clear alpha channel
       viewer.impl.glrenderer().setClearColor(0xffffff, 0); //set transparent background, color code does not matter
       // viewer.impl.invalidate(true); //trigger rendering
+
+      // viewer.loadExtension('Autodesk.Viewing.Wireframes').then(function (extension) {
+      //   extension.activate();
+      // });
 
       //!removing the shadow
       viewer.setGroundShadow(false);

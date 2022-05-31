@@ -27,7 +27,6 @@ const typeStyles = {
 
 const AnimatedTree = (props) => {
   //Using context for folder contents
-  const [folderContents, setFolderContents] = useState([]);
 
   //Using Redux for context
   const hubs = useSelector((state) => state.dataManagement.hubs);

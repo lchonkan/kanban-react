@@ -9,12 +9,14 @@ const dataSlice = createSlice({
     folders: [],
     files: [],
     versions: [],
+    tree: {},
   },
   reducers: {
     setHubs(state, action) {
       console.log('Setting hubs in store');
       const hubs = action.payload;
       state.hubs = hubs;
+      state.tree = { ...state.tree, hubs };
     },
     addProject(state, action) {
       const project = action.payload;
