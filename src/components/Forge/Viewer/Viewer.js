@@ -10,7 +10,7 @@ const Viewer = () => {
   const authCredentials = useSelector((state) => state.auth.credentials);
   const access_token = authCredentials.access_token;
 
-  const urn = 'dXJuOmFkc2sud2lwcHJvZDpmcy5maWxlOnZmLkdPZVRvcy1rVGFLT2VaQWdhOHNqYlE_dmVyc2lvbj0x';
+  const urn = 'dXJuOmFkc2sud2lwcHJvZDpmcy5maWxlOnZmLmlDbnVRSHFaUnB1V0dUN2t4cnk3aFE_dmVyc2lvbj0y';
 
   useEffect(() => {
     if (access_token) {
